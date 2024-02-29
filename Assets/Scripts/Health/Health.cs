@@ -3,9 +3,9 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    private float currentHealth;
 
-    private void Awake()
+    void Start()
     {
         // Initialize current health in the Start or Awake method
         currentHealth = startingHealth;
@@ -18,17 +18,11 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // Debug.Log("Health is depleted. Implement death or damage reaction.");
+           // Debug.Log("Health is depleted. Implement death or damage reaction.");
         }
         else
         {
-            // Debug.Log("Took damage, but still alive. Current health: " + currentHealth);
+           // Debug.Log("Took damage, but still alive. Current health: " + currentHealth);
         }
-    } // This closing brace was missing
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
     }
 }
