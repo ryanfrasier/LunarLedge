@@ -1906,7 +1906,7 @@ MonoBehaviour:
   speed: 2
   player: {fileID: 1303778956}
   aheadDistance: 0
-  cameraSpeed: 20
+  cameraSpeed: 50
 --- !u!1 &538574586
 GameObject:
   m_ObjectHideFlags: 0
