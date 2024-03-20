@@ -4,21 +4,21 @@ public class ArrowTrap : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] fireballs;
-    private float cooldownTimer = Mathf.Infinity;
+    [SerializeField] private GameObject[] arrows;
+    private float cooldownTimer;
 
     private void Attack()
     {
         cooldownTimer = 0;
 
-        fireballs[FindFireball()].transform.position = firePoint.position;
-        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        arrows[FindArrow()].transform.position = firePoint.position;
+        arrows[FindArrow()].GetComponent<EnemyProjectile>().ActivateProjectile();
     }
-    private int FindFireball()
+    private int FindArrow()
     {
-        for (int i = 0; i < fireballs.Length; i++)
+        for (int i = 0; i < arrows.Length; i++)
         {
-            if (!fireballs[i].activeInHierarchy)
+            if (!arrows[i].activeInHierarchy)
                 return i;
         }
         return 0;
@@ -27,15 +27,7 @@ public class ArrowTrap : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left);
-
-        if (cooldownTimer > attackCooldown)
-            Attack();
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player" && cooldownTimer >= attackCooldown)
+        if (cooldownTimer >= attackCooldown)
             Attack();
     }
 }
