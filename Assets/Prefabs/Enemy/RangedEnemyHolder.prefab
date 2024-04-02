@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2320884371343920455}
   - component: {fileID: 2320884371343920454}
   - component: {fileID: 2320884371343920477}
-  - component: {fileID: 1155775699812376159}
+  - component: {fileID: 2339461897810876484}
   m_Layer: 11
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -150,7 +150,8 @@ MonoBehaviour:
   numberOfFlashes: 0
   components:
   - {fileID: 2320884371343920477}
-  - {fileID: 0}
+  deathSound: {fileID: 8300000, guid: dd6d9531e2f11434f9add7e7e09cd332, type: 3}
+  hurtSound: {fileID: 8300000, guid: 32ff513695816ae4fb9ecd5c1bc67120, type: 3}
 --- !u!114 &2320884371343920477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +184,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
---- !u!114 &1155775699812376159
+  fireballSound: {fileID: 8300000, guid: 11f2fb8c24ab53741939b255bda4aab3, type: 3}
+--- !u!114 &2339461897810876484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9030981399802531918}
   - component: {fileID: 9030981399802531919}
   - component: {fileID: 9030981399802531913}
-  - component: {fileID: 1409650402665103407}
+  - component: {fileID: 7956649084885540522}
   m_Layer: 11
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -149,6 +149,8 @@ MonoBehaviour:
   numberOfFlashes: 0
   components:
   - {fileID: 9030981399802531913}
+  deathSound: {fileID: 8300000, guid: dd6d9531e2f11434f9add7e7e09cd332, type: 3}
+  hurtSound: {fileID: 8300000, guid: 32ff513695816ae4fb9ecd5c1bc67120, type: 3}
 --- !u!114 &9030981399802531913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,14 +166,13 @@ MonoBehaviour:
   attackCooldown: 2
   range: 2.5
   damage: 1
-  firepoint: {fileID: 0}
-  fireballs: []
   colliderDistance: 0.45
   boxCollider: {fileID: 9030981399802531918}
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
---- !u!114 &1409650402665103407
+  attackSound: {fileID: 8300000, guid: 347426481a60b394bb52cbf96d7607fe, type: 3}
+--- !u!114 &7956649084885540522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
