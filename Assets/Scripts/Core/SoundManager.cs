@@ -3,12 +3,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; private set; }
-    private AudioSource source;
+    private AudioSource soundSource;
+    private AudioSource musicSource;
 
     private void Awake()
     {
-
-        source = GetComponent<AudioSource>();
+        soundSource = GetComponent<AudioSource>();
+        musicSource = transform.GetChild(0).GetComponent<AudioSource>();
 
         //Keep this object even when we go to new scene
         if (instance == null)
@@ -22,6 +23,6 @@ public class SoundManager : MonoBehaviour
     }
     public void PlaySound(AudioClip _sound)
     {
-        source.PlayOneShot(_sound);
+        soundSource.PlayOneShot(_sound);
     }
 }
